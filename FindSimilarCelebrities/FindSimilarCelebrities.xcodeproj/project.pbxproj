@@ -7,27 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E141ED0826671F44007C123B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E141ED0726671F44007C123B /* AppDelegate.swift */; };
-		E141ED0A26671F44007C123B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E141ED0926671F44007C123B /* SceneDelegate.swift */; };
-		E141ED0C26671F44007C123B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E141ED0B26671F44007C123B /* ViewController.swift */; };
-		E141ED0F26671F44007C123B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E141ED0D26671F44007C123B /* Main.storyboard */; };
-		E141ED1126671F47007C123B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E141ED1026671F47007C123B /* Assets.xcassets */; };
-		E141ED1426671F47007C123B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E141ED1226671F47007C123B /* LaunchScreen.storyboard */; };
+		E141E06D26F630C30030620E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E141E06C26F630C30030620E /* AppDelegate.swift */; };
+		E141E06F26F630C30030620E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E141E06E26F630C30030620E /* SceneDelegate.swift */; };
+		E141E07126F630C30030620E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E141E07026F630C30030620E /* MainViewController.swift */; };
+		E141E07426F630C30030620E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E141E07226F630C30030620E /* Main.storyboard */; };
+		E141E07726F630C30030620E /* FindSimilarCelebrities.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E141E07526F630C30030620E /* FindSimilarCelebrities.xcdatamodeld */; };
+		E141E07926F630C50030620E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E141E07826F630C50030620E /* Assets.xcassets */; };
+		E141E07C26F630C50030620E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E141E07A26F630C50030620E /* LaunchScreen.storyboard */; };
+		E141E08426F728890030620E /* nsdata.swift in Sources */ = {isa = PBXBuildFile; fileRef = E141E08326F728890030620E /* nsdata.swift */; };
+		E141E08626F754C30030620E /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = E141E08526F754C30030620E /* Network.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E141ED0426671F44007C123B /* writingHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = writingHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E141ED0726671F44007C123B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E141ED0926671F44007C123B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E141ED0B26671F44007C123B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E141ED0E26671F44007C123B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E141ED1026671F47007C123B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E141ED1326671F47007C123B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		E141ED1526671F47007C123B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E141E06926F630C30030620E /* FindSimilarCelebrities.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindSimilarCelebrities.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E141E06C26F630C30030620E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E141E06E26F630C30030620E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		E141E07026F630C30030620E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		E141E07326F630C30030620E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E141E07626F630C30030620E /* FindSimilarCelebrities.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FindSimilarCelebrities.xcdatamodel; sourceTree = "<group>"; };
+		E141E07826F630C50030620E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E141E07B26F630C50030620E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E141E07D26F630C50030620E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E141E08326F728890030620E /* nsdata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nsdata.swift; sourceTree = "<group>"; };
+		E141E08526F754C30030620E /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		E141ED0126671F44007C123B /* Frameworks */ = {
+		E141E06626F630C30030620E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -37,71 +43,74 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E141ECFB26671F44007C123B = {
+		E141E06026F630C30030620E = {
 			isa = PBXGroup;
 			children = (
-				E141ED0626671F44007C123B /* writingHelper */,
-				E141ED0526671F44007C123B /* Products */,
+				E141E06B26F630C30030620E /* FindSimilarCelebrities */,
+				E141E06A26F630C30030620E /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		E141ED0526671F44007C123B /* Products */ = {
+		E141E06A26F630C30030620E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E141ED0426671F44007C123B /* writingHelper.app */,
+				E141E06926F630C30030620E /* FindSimilarCelebrities.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E141ED0626671F44007C123B /* writingHelper */ = {
+		E141E06B26F630C30030620E /* FindSimilarCelebrities */ = {
 			isa = PBXGroup;
 			children = (
-				E141ED0726671F44007C123B /* AppDelegate.swift */,
-				E141ED0926671F44007C123B /* SceneDelegate.swift */,
-				E141ED0B26671F44007C123B /* ViewController.swift */,
-				E141ED0D26671F44007C123B /* Main.storyboard */,
-				E141ED1026671F47007C123B /* Assets.xcassets */,
-				E141ED1226671F47007C123B /* LaunchScreen.storyboard */,
-				E141ED1526671F47007C123B /* Info.plist */,
+				E141E06C26F630C30030620E /* AppDelegate.swift */,
+				E141E06E26F630C30030620E /* SceneDelegate.swift */,
+				E141E07026F630C30030620E /* MainViewController.swift */,
+				E141E08526F754C30030620E /* Network.swift */,
+				E141E08326F728890030620E /* nsdata.swift */,
+				E141E07226F630C30030620E /* Main.storyboard */,
+				E141E07826F630C50030620E /* Assets.xcassets */,
+				E141E07A26F630C50030620E /* LaunchScreen.storyboard */,
+				E141E07D26F630C50030620E /* Info.plist */,
+				E141E07526F630C30030620E /* FindSimilarCelebrities.xcdatamodeld */,
 			);
-			path = writingHelper;
+			path = FindSimilarCelebrities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E141ED0326671F44007C123B /* writingHelper */ = {
+		E141E06826F630C30030620E /* FindSimilarCelebrities */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E141ED1826671F47007C123B /* Build configuration list for PBXNativeTarget "writingHelper" */;
+			buildConfigurationList = E141E08026F630C50030620E /* Build configuration list for PBXNativeTarget "FindSimilarCelebrities" */;
 			buildPhases = (
-				E141ED0026671F44007C123B /* Sources */,
-				E141ED0126671F44007C123B /* Frameworks */,
-				E141ED0226671F44007C123B /* Resources */,
+				E141E06526F630C30030620E /* Sources */,
+				E141E06626F630C30030620E /* Frameworks */,
+				E141E06726F630C30030620E /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = writingHelper;
-			productName = writingHelper;
-			productReference = E141ED0426671F44007C123B /* writingHelper.app */;
+			name = FindSimilarCelebrities;
+			productName = FindSimilarCelebrities;
+			productReference = E141E06926F630C30030620E /* FindSimilarCelebrities.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		E141ECFC26671F44007C123B /* Project object */ = {
+		E141E06126F630C30030620E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
-					E141ED0326671F44007C123B = {
-						CreatedOnToolsVersion = 12.5;
+					E141E06826F630C30030620E = {
+						CreatedOnToolsVersion = 12.5.1;
 					};
 				};
 			};
-			buildConfigurationList = E141ECFF26671F44007C123B /* Build configuration list for PBXProject "writingHelper" */;
+			buildConfigurationList = E141E06426F630C30030620E /* Build configuration list for PBXProject "FindSimilarCelebrities" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -109,55 +118,58 @@
 				en,
 				Base,
 			);
-			mainGroup = E141ECFB26671F44007C123B;
-			productRefGroup = E141ED0526671F44007C123B /* Products */;
+			mainGroup = E141E06026F630C30030620E;
+			productRefGroup = E141E06A26F630C30030620E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E141ED0326671F44007C123B /* writingHelper */,
+				E141E06826F630C30030620E /* FindSimilarCelebrities */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		E141ED0226671F44007C123B /* Resources */ = {
+		E141E06726F630C30030620E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E141ED1426671F47007C123B /* LaunchScreen.storyboard in Resources */,
-				E141ED1126671F47007C123B /* Assets.xcassets in Resources */,
-				E141ED0F26671F44007C123B /* Main.storyboard in Resources */,
+				E141E07C26F630C50030620E /* LaunchScreen.storyboard in Resources */,
+				E141E07926F630C50030620E /* Assets.xcassets in Resources */,
+				E141E07426F630C30030620E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		E141ED0026671F44007C123B /* Sources */ = {
+		E141E06526F630C30030620E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E141ED0C26671F44007C123B /* ViewController.swift in Sources */,
-				E141ED0826671F44007C123B /* AppDelegate.swift in Sources */,
-				E141ED0A26671F44007C123B /* SceneDelegate.swift in Sources */,
+				E141E07726F630C30030620E /* FindSimilarCelebrities.xcdatamodeld in Sources */,
+				E141E08426F728890030620E /* nsdata.swift in Sources */,
+				E141E08626F754C30030620E /* Network.swift in Sources */,
+				E141E07126F630C30030620E /* MainViewController.swift in Sources */,
+				E141E06D26F630C30030620E /* AppDelegate.swift in Sources */,
+				E141E06F26F630C30030620E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E141ED0D26671F44007C123B /* Main.storyboard */ = {
+		E141E07226F630C30030620E /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E141ED0E26671F44007C123B /* Base */,
+				E141E07326F630C30030620E /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		E141ED1226671F47007C123B /* LaunchScreen.storyboard */ = {
+		E141E07A26F630C50030620E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E141ED1326671F47007C123B /* Base */,
+				E141E07B26F630C50030620E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -165,7 +177,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		E141ED1626671F47007C123B /* Debug */ = {
+		E141E07E26F630C50030620E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -226,7 +238,7 @@
 			};
 			name = Debug;
 		};
-		E141ED1726671F47007C123B /* Release */ = {
+		E141E07F26F630C50030620E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -281,38 +293,38 @@
 			};
 			name = Release;
 		};
-		E141ED1926671F47007C123B /* Debug */ = {
+		E141E08126F630C50030620E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5KZ5C4UW39;
-				INFOPLIST_FILE = writingHelper/Info.plist;
+				INFOPLIST_FILE = FindSimilarCelebrities/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = JY.writingHelper;
+				PRODUCT_BUNDLE_IDENTIFIER = jy.FindSimilarCelebrities;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		E141ED1A26671F47007C123B /* Release */ = {
+		E141E08226F630C50030620E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5KZ5C4UW39;
-				INFOPLIST_FILE = writingHelper/Info.plist;
+				INFOPLIST_FILE = FindSimilarCelebrities/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = JY.writingHelper;
+				PRODUCT_BUNDLE_IDENTIFIER = jy.FindSimilarCelebrities;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -322,25 +334,38 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E141ECFF26671F44007C123B /* Build configuration list for PBXProject "writingHelper" */ = {
+		E141E06426F630C30030620E /* Build configuration list for PBXProject "FindSimilarCelebrities" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E141ED1626671F47007C123B /* Debug */,
-				E141ED1726671F47007C123B /* Release */,
+				E141E07E26F630C50030620E /* Debug */,
+				E141E07F26F630C50030620E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E141ED1826671F47007C123B /* Build configuration list for PBXNativeTarget "writingHelper" */ = {
+		E141E08026F630C50030620E /* Build configuration list for PBXNativeTarget "FindSimilarCelebrities" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E141ED1926671F47007C123B /* Debug */,
-				E141ED1A26671F47007C123B /* Release */,
+				E141E08126F630C50030620E /* Debug */,
+				E141E08226F630C50030620E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E141E07526F630C30030620E /* FindSimilarCelebrities.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E141E07626F630C30030620E /* FindSimilarCelebrities.xcdatamodel */,
+			);
+			currentVersion = E141E07626F630C30030620E /* FindSimilarCelebrities.xcdatamodel */;
+			path = FindSimilarCelebrities.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
-	rootObject = E141ECFC26671F44007C123B /* Project object */;
+	rootObject = E141E06126F630C30030620E /* Project object */;
 }
