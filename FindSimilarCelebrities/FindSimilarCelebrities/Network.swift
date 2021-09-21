@@ -3,9 +3,29 @@ import Foundation
 #if canImport(FoundationNetworking)
 import FoundationNetworking
 #endif
+//{
+//    "info": {
+//        "size": {
+//            "width": 340,
+//            "height": 225
+//        },
+//        "faceCount": 1
+//    },
+//    "faces": [
+//        {
+//            "celebrity": {
+//                "value": "하정우",
+//                "confidence": 0.571838
+//            }
+//        }
+//    ]
+//}
+
+
 
 func uploadImage(paramName: String, fileName: String, image: UIImage) {
     let url = URL(string: "https://openapi.naver.com/v1/vision/celebrity")
+//    celebrity
 
     // 바운더리를 구분하기 위한 임의의 문자열. 각 필드는 `--바운더리`의 라인으로 구분된다.
     let boundary = UUID().uuidString
@@ -16,10 +36,8 @@ func uploadImage(paramName: String, fileName: String, image: UIImage) {
     urlRequest.httpMethod = "POST"
     urlRequest.addValue("s9djJV1HxQ0PZJDEz_xH", forHTTPHeaderField: "X-Naver-Client-Id")
     urlRequest.addValue("K5rhsSCZfo", forHTTPHeaderField: "X-Naver-Client-Secret")
-    
     // Boundary랑 Content-type 지정해주기.
     urlRequest.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
-
     var data = Data()
 
     // --(boundary)로 시작.
@@ -33,25 +51,25 @@ func uploadImage(paramName: String, fileName: String, image: UIImage) {
 
     // 모든 내용 끝나는 곳에 --(boundary)--로 표시해준다.
     data.append("\r\n--\(boundary)--\r\n".data(using: .utf8)!)
-
     // Send a POST request to the URL, with the data we created earlier
-    
-
     
     session.uploadTask(with: urlRequest, from: data, completionHandler: { responseData, response, error in
         if error == nil {
             
-            print(String(data: responseData!, encoding: .utf8)!)
+//            let json = String(data: responseData!, encoding: .utf8)!
 
-            let jsonData = try? JSONSerialization.jsonObject(with: responseData!, options: .allowFragments)
+            let jsonData = try? JSONSerialization.jsonObject(with: responseData!, options: .mutableContainers)
             if let json = jsonData as? [String: Any] {
+
+                for i in json {
+                    print("<\(i)>")
+                }
                 
-//                print("####")
-//                print(json)
+
             }
         }
     }).resume()
 }
 
 
-
+//https://www.it-gundan.com/ko/ios/swift%EC%97%90%EC%84%9C-json-%EB%B0%B0%EC%97%B4%EC%9D%84-%EB%B0%B0%EC%97%B4%EB%A1%9C-%EA%B5%AC%EB%AC%B8-%EB%B6%84%EC%84%9D%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95/830328697/amp/
