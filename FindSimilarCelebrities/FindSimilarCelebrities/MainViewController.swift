@@ -65,6 +65,7 @@ class MainViewController: UIViewController{
         testview.image = UIImage(named: "tabbar")
         testview.contentMode = .scaleToFill
         backgroundView.backgroundColor = .systemGray2
+        
     }
 }
 
@@ -75,7 +76,7 @@ extension MainViewController : UIImagePickerControllerDelegate,UINavigationContr
             let fileUrl = info[.imageURL] as? URL
             let strURL = fileUrl!.absoluteString
             let nsURL = NSURL(string: strURL)
-
+            print(nsURL)
             uploadImage(paramName: "image", fileName: "image", image: image)
         }
         dismiss(animated: true, completion: nil)
