@@ -10,9 +10,7 @@ import UIKit
 class MainViewController: UIViewController{
     
     @IBOutlet weak var imageView: UIImageView!
-    
     @IBOutlet weak var backgroundView: UIView!
-    
     @IBOutlet weak var testview: UIImageView!
     func convertFormField(named name: String,
                                   value: String,
@@ -76,7 +74,7 @@ extension MainViewController : UIImagePickerControllerDelegate,UINavigationContr
             let fileUrl = info[.imageURL] as? URL
             let strURL = fileUrl!.absoluteString
             let nsURL = NSURL(string: strURL)
-            print(nsURL)
+//            print(nsURL)
             uploadImage(paramName: "image", fileName: "image", image: image)
         }
         dismiss(animated: true, completion: nil)

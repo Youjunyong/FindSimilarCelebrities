@@ -21,7 +21,10 @@ import FoundationNetworking
 //    ]
 //}
 
-
+struct Root: Codable{
+    var info: String
+    var faces: Array<String>
+}
 
 func uploadImage(paramName: String, fileName: String, image: UIImage) {
     let url = URL(string: "https://openapi.naver.com/v1/vision/celebrity")
@@ -55,21 +58,44 @@ func uploadImage(paramName: String, fileName: String, image: UIImage) {
     
     session.uploadTask(with: urlRequest, from: data, completionHandler: { responseData, response, error in
         if error == nil {
+                
+            let jsonData = try? JSONSerialization.jsonObject(with: responseData!, options: []) as! NSDictionary
+            if let info = jsonData!["info"] as? NSDictionary {
+                print(info)
+            }
             
-//            let json = String(data: responseData!, encoding: .utf8)!
-
-            let jsonData = try? JSONSerialization.jsonObject(with: responseData!, options: .mutableContainers)
-            if let json = jsonData as? [String: Any] {
-
-                for i in json {
-                    print("<\(i)>")
+            let faces = jsonData!["faces"] as? NSArray
+            if let face = faces![0] as? NSDictionary {
+                if let value = face["celebrity"] as? NSDictionary {
+                    print(value["value"])
                 }
                 
-
+                    
+                
             }
+
+            
+
+//            if let json = jsonData as? [String:Any] {
+//                if let new = json["faces"] as? Data{
+//
+//                    print(String(data: new, encoding: .utf8))
+//                }
+////                print("##\(new?[0])##" )
+////                let a = "\(new?[0])".data(using: .utf8)
+//
+//
+//
+//
+////                print(type(of: json["faces"]))
+//            }
+            
+            
+
         }
     }).resume()
 }
 
 
 //https://www.it-gundan.com/ko/ios/swift%EC%97%90%EC%84%9C-json-%EB%B0%B0%EC%97%B4%EC%9D%84-%EB%B0%B0%EC%97%B4%EB%A1%9C-%EA%B5%AC%EB%AC%B8-%EB%B6%84%EC%84%9D%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95/830328697/amp/
+ 
