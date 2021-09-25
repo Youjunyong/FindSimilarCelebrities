@@ -33,7 +33,6 @@ class MainViewController: UIViewController{
 
     func openCamera(){
       picker.sourceType = .camera
-        
       present(picker, animated: false, completion: nil)
     }
 

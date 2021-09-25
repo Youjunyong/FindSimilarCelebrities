@@ -15,6 +15,7 @@
 		E141E07926F630C50030620E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E141E07826F630C50030620E /* Assets.xcassets */; };
 		E141E07C26F630C50030620E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E141E07A26F630C50030620E /* LaunchScreen.storyboard */; };
 		E141E08626F754C30030620E /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = E141E08526F754C30030620E /* Network.swift */; };
+		E1B8315226FEFF0B00CA2083 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B8315126FEFF0B00CA2083 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		E141E07B26F630C50030620E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E141E07D26F630C50030620E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E141E08526F754C30030620E /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		E1B8315126FEFF0B00CA2083 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				E141E06E26F630C30030620E /* SceneDelegate.swift */,
 				E141E07026F630C30030620E /* MainViewController.swift */,
 				E141E08526F754C30030620E /* Network.swift */,
+				E1B8315126FEFF0B00CA2083 /* Model.swift */,
 				E141E07226F630C30030620E /* Main.storyboard */,
 				E141E07826F630C50030620E /* Assets.xcassets */,
 				E141E07A26F630C50030620E /* LaunchScreen.storyboard */,
@@ -146,6 +149,7 @@
 				E141E07726F630C30030620E /* FindSimilarCelebrities.xcdatamodeld in Sources */,
 				E141E08626F754C30030620E /* Network.swift in Sources */,
 				E141E07126F630C30030620E /* MainViewController.swift in Sources */,
+				E1B8315226FEFF0B00CA2083 /* Model.swift in Sources */,
 				E141E06D26F630C30030620E /* AppDelegate.swift in Sources */,
 				E141E06F26F630C30030620E /* SceneDelegate.swift in Sources */,
 			);

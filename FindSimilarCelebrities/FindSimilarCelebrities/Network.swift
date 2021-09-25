@@ -3,6 +3,67 @@ import Foundation
 #if canImport(FoundationNetworking)
 import FoundationNetworking
 #endif
+
+// MARK: - Face json
+//{
+//    "info": {
+//        "size": {
+//            "width": 620,
+//            "height": 765
+//        },
+//        "faceCount": 1
+//    },
+//    "faces": [
+//        {
+//            "roi": {
+//                "x": 212,
+//                "y": 174,
+//                "width": 249,
+//                "height": 249
+//            },
+//            "landmark": {
+//                "leftEye": {
+//                    "x": 282,
+//                    "y": 243
+//                },
+//                "rightEye": {
+//                    "x": 390,
+//                    "y": 236
+//                },
+//                "nose": {
+//                    "x": 346,
+//                    "y": 303
+//                },
+//                "leftMouth": {
+//                    "x": 304,
+//                    "y": 373
+//                },
+//                "rightMouth": {
+//                    "x": 386,
+//                    "y": 368
+//                }
+//            },
+//            "gender": {
+//                "value": "male",
+//                "confidence": 1.0
+//            },
+//            "age": {
+//                "value": "35~39",
+//                "confidence": 1.0
+//            },
+//            "emotion": {
+//                "value": "neutral",
+//                "confidence": 0.999968
+//            },
+//            "pose": {
+//                "value": "frontal_face",
+//                "confidence": 0.999339
+//            }
+//        }
+//    ]
+//}
+
+// MARK: Celebrity json
 //{
 //    "info": {
 //        "size": {
@@ -26,70 +87,47 @@ struct Root: Codable{
     var faces: Array<String>
 }
 
+
+func parseCelebrity(responseData: Data) -> [String: String] {
+    var retDict: [String: String] = [:]
+    if let jsonData = try? JSONSerialization.jsonObject(with: responseData, options: []) as? NSDictionary {
+        if let info = jsonData["info"] as? NSDictionary {
+            retDict["faceCount"] = "\(String(describing: info["faceCount"]))"
+        }
+        let faces = jsonData["faces"] as? NSArray
+        if let face = faces![0] as? NSDictionary {
+            if let celebrity = face["celebrity"] as? NSDictionary {
+                let value = celebrity["value"] as! String
+                let confidence = celebrity["confidence"] as! Double
+                retDict["value"] = value
+                retDict["confidence"] = "\(confidence * 100)"
+            }
+        }
+    }else{
+        
+    }
+    return retDict
+}
+
 func uploadImage(paramName: String, fileName: String, image: UIImage) {
     let url = URL(string: "https://openapi.naver.com/v1/vision/celebrity")
-//    celebrity
-
-    // 바운더리를 구분하기 위한 임의의 문자열. 각 필드는 `--바운더리`의 라인으로 구분된다.
     let boundary = UUID().uuidString
     let session = URLSession.shared
-
-    // URLRequest 생성하기
     var urlRequest = URLRequest(url: url!)
     urlRequest.httpMethod = "POST"
     urlRequest.addValue("s9djJV1HxQ0PZJDEz_xH", forHTTPHeaderField: "X-Naver-Client-Id")
     urlRequest.addValue("K5rhsSCZfo", forHTTPHeaderField: "X-Naver-Client-Secret")
-    // Boundary랑 Content-type 지정해주기.
     urlRequest.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
     var data = Data()
-
-    // --(boundary)로 시작.
     data.append("\r\n--\(boundary)\r\n".data(using: .utf8)!)
-    // 헤더 정의 - 문자열로 작성 후 UTF8로 인코딩해서 Data타입으로 변환해야 함
     data.append("Content-Disposition: form-data; name=\"\(paramName)\"; filename=\"\(fileName)\"\r\n".data(using: .utf8)!)
-    // 헤더 정의 2 - 문자열로 작성 후 UTF8로 인코딩해서 Data타입으로 변환해야 함, 구분은 \r\n으로 통일.
     data.append("Content-Type: image/png\r\n\r\n".data(using: .utf8)!)
-    // 내용 붙이기
     data.append(image.pngData()!)
-
-    // 모든 내용 끝나는 곳에 --(boundary)--로 표시해준다.
     data.append("\r\n--\(boundary)--\r\n".data(using: .utf8)!)
-    // Send a POST request to the URL, with the data we created earlier
-    
+
     session.uploadTask(with: urlRequest, from: data, completionHandler: { responseData, response, error in
         if error == nil {
-                
-            let jsonData = try? JSONSerialization.jsonObject(with: responseData!, options: []) as! NSDictionary
-            if let info = jsonData!["info"] as? NSDictionary {
-                print(info)
-            }
-            
-            let faces = jsonData!["faces"] as? NSArray
-            if let face = faces![0] as? NSDictionary {
-                if let value = face["celebrity"] as? NSDictionary {
-                    print(value["value"])
-                }
-                
-                    
-                
-            }
-
-            
-
-//            if let json = jsonData as? [String:Any] {
-//                if let new = json["faces"] as? Data{
-//
-//                    print(String(data: new, encoding: .utf8))
-//                }
-////                print("##\(new?[0])##" )
-////                let a = "\(new?[0])".data(using: .utf8)
-//
-//
-//
-//
-////                print(type(of: json["faces"]))
-//            }
-            
+            let retDict = parseCelebrity(responseData: responseData!)
             
 
         }
