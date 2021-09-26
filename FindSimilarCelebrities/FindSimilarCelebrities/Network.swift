@@ -82,12 +82,49 @@ import FoundationNetworking
 //    ]
 //}
 
-struct Root: Codable{
-    var info: String
-    var faces: Array<String>
+func parseFace(responseData: Data) -> [String: String] {
+    var retDict: [String: String] = [:]
+    if let jsonData = try? JSONSerialization.jsonObject(with: responseData, options: []) as? NSDictionary {
+        if let info = jsonData["info"] as? NSDictionary {
+            retDict["faceCount"] = "\(String(describing: info["faceCount"]))"
+        }
+        let faces = jsonData["faces"] as? NSArray
+        if let face = faces![0] as? NSDictionary{
+            if let gender = face["gender"] as? NSDictionary{
+                
+                let value = gender["value"]  as! String
+                let confidence = gender["confidence"] as! Double
+                retDict["gender_v"] = value
+                retDict["gender_c"] = "\(round(confidence * 10000)/100)%"
+            }
+            if let emotion = face["emotion"] as? NSDictionary{
+                
+                let value = emotion["value"]  as! String
+                let confidence = emotion["confidence"] as! Double
+                retDict["emotion_v"] = value
+                retDict["emotion_c"] = "\(round(confidence * 10000)/100)%"
+            }
+//            emotion
+            if let age = face["age"] as? NSDictionary{
+                
+                let value = age["value"]  as! String
+                let confidence = age["confidence"] as! Double
+                retDict["age_v"] = value
+                retDict["age_c"] = "\(round(confidence * 10000)/100)%"
+            }
+//            age
+            if let pose = face["pose"] as? NSDictionary{
+                
+                let value = pose["value"]  as! String
+                let confidence = pose["confidence"] as! Double
+                retDict["pose_v"] = value
+                retDict["pose_c"] = "\(round(confidence * 10000)/100)%"
+            }
+//            pose
+        }
+    }
+    return retDict
 }
-
-
 func parseCelebrity(responseData: Data) -> [String: String] {
     var retDict: [String: String] = [:]
     if let jsonData = try? JSONSerialization.jsonObject(with: responseData, options: []) as? NSDictionary {
@@ -100,7 +137,7 @@ func parseCelebrity(responseData: Data) -> [String: String] {
                 let value = celebrity["value"] as! String
                 let confidence = celebrity["confidence"] as! Double
                 retDict["value"] = value
-                retDict["confidence"] = "\(confidence * 100)"
+                retDict["confidence"] = "\(round(confidence * 10000)/100)%"
             }
         }
     }else{
@@ -109,8 +146,9 @@ func parseCelebrity(responseData: Data) -> [String: String] {
     return retDict
 }
 
-func uploadImage(paramName: String, fileName: String, image: UIImage) {
-    let url = URL(string: "https://openapi.naver.com/v1/vision/celebrity")
+func uploadImage(paramName: String, fileName: String, image: UIImage, to: String) {
+    // to : face or celebrity
+    let url = URL(string: "https://openapi.naver.com/v1/vision/\(to)")
     let boundary = UUID().uuidString
     let session = URLSession.shared
     var urlRequest = URLRequest(url: url!)
@@ -127,7 +165,13 @@ func uploadImage(paramName: String, fileName: String, image: UIImage) {
 
     session.uploadTask(with: urlRequest, from: data, completionHandler: { responseData, response, error in
         if error == nil {
-            let retDict = parseCelebrity(responseData: responseData!)
+            if to == "celebrity" {
+                let retDict = parseCelebrity(responseData: responseData!)
+            }
+            if to == "face" {
+                let retDict = parseFace(responseData: responseData!)
+                print(retDict)
+            }
             
 
         }

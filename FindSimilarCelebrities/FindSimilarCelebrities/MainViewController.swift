@@ -6,24 +6,15 @@
 //
 
 import UIKit
+import CBFlashyTabBarController
 
 class MainViewController: UIViewController{
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var backgroundView: UIView!
-    @IBOutlet weak var testview: UIImageView!
-    func convertFormField(named name: String,
-                                  value: String,
-                                  using boundary: String) -> String {
-        let mimeType = "<Content-Type header here>"
-        var fieldString = "--\(boundary)\r\n"
-        fieldString += "Content-Disposition: form-data; name=\"\(name)\"\r\n"
-        fieldString += "Content-Type: \(mimeType)\r\n\r\n"
-        fieldString += "\r\n"
-        fieldString += "\(value)\r\n"
-        
-        return fieldString
-    }
+    
+    
+
 
     let picker = UIImagePickerController()
     func openLibrary(){
@@ -59,9 +50,8 @@ class MainViewController: UIViewController{
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         picker.delegate = self
-        testview.image = UIImage(named: "tabbar")
-        testview.contentMode = .scaleToFill
-        backgroundView.backgroundColor = .systemGray2
+        
+        
         
     }
 }
@@ -72,9 +62,8 @@ extension MainViewController : UIImagePickerControllerDelegate,UINavigationContr
         if let image = info[.originalImage] as? UIImage{
             let fileUrl = info[.imageURL] as? URL
             let strURL = fileUrl!.absoluteString
-            let nsURL = NSURL(string: strURL)
-//            print(nsURL)
-            uploadImage(paramName: "image", fileName: "image", image: image)
+            imageView.image = image
+            uploadImage(paramName: "image", fileName: "image", image: image , to: "face")
         }
         dismiss(animated: true, completion: nil)
     }
