@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19206" systemVersion="20G95" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
-        <attribute name="attribute" optional="YES"/>
+    <entity name="Record" representedClassName="Record" syncable="YES" codeGenerationType="class">
+        <attribute name="celebrityConfidence" optional="YES" attributeType="String"/>
+        <attribute name="celebrityValue" optional="YES" attributeType="String"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="faceAgeConfidence" optional="YES" attributeType="String"/>
+        <attribute name="faceAgeValue" optional="YES" attributeType="String"/>
+        <attribute name="faceEmotionConfidence" optional="YES" attributeType="String"/>
+        <attribute name="faceEmotionValue" optional="YES" attributeType="String"/>
+        <attribute name="faceGenderConfidence" optional="YES" attributeType="String"/>
+        <attribute name="faceGenderValue" optional="YES" attributeType="String"/>
+        <attribute name="facePoseConfidence" optional="YES" attributeType="String"/>
+        <attribute name="facePoseValue" optional="YES" attributeType="String"/>
+        <attribute name="image" optional="YES" attributeType="Binary"/>
     </entity>
     <elements>
-        <element name="Item" positionX="-63" positionY="-18" width="128" height="44"/>
+        <element name="Record" positionX="-63" positionY="-18" width="128" height="209"/>
     </elements>
 </model>
