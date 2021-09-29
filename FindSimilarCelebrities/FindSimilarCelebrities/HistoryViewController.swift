@@ -9,13 +9,29 @@ import UIKit
 
 class HistoryViewController: UIViewController {
 
+    @IBAction func delTouched(_ sender: UIButton) {
+        let contentView = sender.superview
+        if let cell = contentView?.superview as? UITableViewCell{
+            if let tableView = cell.superview as? UITableView{
+                if let indexPath = tableView.indexPath(for: cell) {
+                    DataManager.shared.delRecord(DataManager.shared.recordList[indexPath.row])
+                    DataManager.shared.fetchRecord()
+                    tableView.reloadData()
+                }
+            }
+        }
+        
+    }
+    
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
+        
         DataManager.shared.fetchRecord()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -29,7 +45,6 @@ class HistoryViewController: UIViewController {
 extension HistoryViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let DetailVC = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else{return}
-        DetailVC.dataIdx = indexPath.row
         self.present(DetailVC, animated: true, completion: nil)
     }
 }
@@ -44,7 +59,7 @@ extension HistoryViewController: UITableViewDataSource{
         if let imageView = cell.viewWithTag(1) as? UIImageView{
             imageView.layer.cornerRadius = imageView.frame.size.height / 2
             imageView.layer.masksToBounds = true
-            imageView.layer.borderWidth = 5.0
+            imageView.layer.borderWidth = 3.0
             imageView.layer.borderColor = CGColor(red: 1.0, green: 0, blue: 0, alpha: 1)
             imageView.image = UIImage(data: DataManager.shared.recordList[indexPath.row].image!)
         }
@@ -59,6 +74,9 @@ extension HistoryViewController: UITableViewDataSource{
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "MM월 dd일"
             dateLabel.text = dateFormatter.string(from: date)
+        }
+        if let delBtn = cell.viewWithTag(10) as? UIButton{
+            delBtn.setTitle("", for: .normal)
         }
         return cell
     }

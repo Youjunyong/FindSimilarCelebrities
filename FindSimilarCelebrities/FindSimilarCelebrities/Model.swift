@@ -35,9 +35,6 @@ class DataManager{
     func addNewRecord(_ record: [String:String], _ img: Data){
         
       let newRecord = Record(context : mainContext)
-//      newRecord.content = record
-//        내용들.. dict로 받아올듯 ?
-        
         newRecord.image = img
         newRecord.date = Date()
         newRecord.celebrityValue = record["celebrityValue"]
@@ -51,13 +48,13 @@ class DataManager{
         newRecord.faceEmotionValue = record["emotionValue"]
         newRecord.faceEmotionConfidence = record["emotionConfidence"]
         
-                let container = NSPersistentContainer(name: "FindSimilarCelebrities")
-                  print(container.persistentStoreDescriptions.first?.url)
+//                let container = NSPersistentContainer(name: "FindSimilarCelebrities")
+//                  print(container.persistentStoreDescriptions.first?.url)
         saveContext()
         fetchRecord()
     }
     
-    func delMemo(_ record: Record?){
+    func delRecord(_ record: Record?){
         if let record = record{
             
 //            let index = memoList.firstIndex(of: memo)

@@ -58,7 +58,7 @@ class MainViewController: UIViewController{
 extension MainViewController : UIImagePickerControllerDelegate,UINavigationControllerDelegate{
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        let flag =  DataManager.shared.recordList.count
+        
         let boundary = UUID().uuidString
         let semaphore = DispatchSemaphore(value: 0)
         guard let image = info[.originalImage] as? UIImage else{return}
