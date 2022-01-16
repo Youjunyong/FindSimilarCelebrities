@@ -20,6 +20,7 @@
 		E19B208C2703062B00D8A154 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19B208B2703062B00D8A154 /* HistoryViewController.swift */; };
 		E1B8315226FEFF0B00CA2083 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B8315126FEFF0B00CA2083 /* Model.swift */; };
 		E1B831A226FF286200CA2083 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B831A126FF286100CA2083 /* DetailViewController.swift */; };
+		E1B93A0E2793CC4500519D78 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B93A0D2793CC4500519D78 /* test.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		E19B208B2703062B00D8A154 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		E1B8315126FEFF0B00CA2083 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		E1B831A126FF286100CA2083 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		E1B93A0D2793CC4500519D78 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		E8E3238C2F8F4EC113332DB3 /* Pods-FindSimilarCelebrities.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindSimilarCelebrities.release.xcconfig"; path = "Target Support Files/Pods-FindSimilarCelebrities/Pods-FindSimilarCelebrities.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,6 +98,7 @@
 				E141E06E26F630C30030620E /* SceneDelegate.swift */,
 				E141E07026F630C30030620E /* MainViewController.swift */,
 				E141E08526F754C30030620E /* Network.swift */,
+				E1B93A0D2793CC4500519D78 /* test.swift */,
 				E1B8315126FEFF0B00CA2083 /* Model.swift */,
 				E141E07226F630C30030620E /* Main.storyboard */,
 				E19B208B2703062B00D8A154 /* HistoryViewController.swift */,
@@ -226,6 +229,7 @@
 				E141E07726F630C30030620E /* FindSimilarCelebrities.xcdatamodeld in Sources */,
 				E141E08626F754C30030620E /* Network.swift in Sources */,
 				E141E07126F630C30030620E /* MainViewController.swift in Sources */,
+				E1B93A0E2793CC4500519D78 /* test.swift in Sources */,
 				E1B8315226FEFF0B00CA2083 /* Model.swift in Sources */,
 				E141E06D26F630C30030620E /* AppDelegate.swift in Sources */,
 				E13A07022700C81400427A9B /* MoreInfoViewController.swift in Sources */,

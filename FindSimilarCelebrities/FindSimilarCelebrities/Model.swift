@@ -17,7 +17,6 @@ class DataManager{
   }
   var mainContext : NSManagedObjectContext{
     return persistentContainer.viewContext
-    
   }
     var recordList = [Record]()
       
@@ -47,33 +46,21 @@ class DataManager{
         newRecord.facePoseValue = record["poseValue"]
         newRecord.faceEmotionValue = record["emotionValue"]
         newRecord.faceEmotionConfidence = record["emotionConfidence"]
-        
-//                let container = NSPersistentContainer(name: "FindSimilarCelebrities")
-//                  print(container.persistentStoreDescriptions.first?.url)
         saveContext()
         fetchRecord()
     }
     
     func delRecord(_ record: Record?){
         if let record = record{
-            
-//            let index = memoList.firstIndex(of: memo)
-            
             mainContext.delete(record)
             saveContext()
             fetchRecord()
         }
-        
-        
     }
-    
-    
-    
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "FindSimilarCelebrities")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
-  
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
