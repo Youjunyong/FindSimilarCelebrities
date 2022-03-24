@@ -1,16 +1,20 @@
 PODS:
   - CBFlashyTabBarController (0.8.3)
+  - LTMorphingLabel (0.9.3)
 
 DEPENDENCIES:
   - CBFlashyTabBarController
+  - LTMorphingLabel
 
 SPEC REPOS:
   trunk:
     - CBFlashyTabBarController
+    - LTMorphingLabel
 
 SPEC CHECKSUMS:
   CBFlashyTabBarController: bc6b11dd4cbc9b54785c8944156e2f4d4f03b088
+  LTMorphingLabel: f2b256e4fe665aac27f0d0e8ccdcd79590f0cd70
 
-PODFILE CHECKSUM: ed1b6cb73143d80e8bec2945210ee8cbf6708a6d
+PODFILE CHECKSUM: a1e1de5b8c08d661843fab67f1972a21d38d3fe8
 
 COCOAPODS: 1.11.2

@@ -40,9 +40,6 @@ class DetailViewController: UIViewController {
         DataManager.shared.fetchRecord()
         imageView.image =  UIImage(data : DataManager.shared.recordList[dataIdx!].image!)
     }
-    
-    
-
 }
 
 extension DetailViewController: UITableViewDelegate{
